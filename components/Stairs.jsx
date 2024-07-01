@@ -1,30 +1,44 @@
-import React from 'react'
-import { motion } from "framer-motion"
+import React from "react";
+import { motion } from "framer-motion";
 
 const stairsAnimations = {
-  initial: {
-    top: "0%",
-  },
-  animate: {
-    top: "100%"
-  },
-  exit: {
-    top: ["100%", "0%"],
-  }
-}
-const reverseIndex = () => {
-  const totalSteps = 30
-  return totalSteps - i - 1;
-}
+	initial: {
+		top: "0%",
+	},
+	animate: {
+		top: "100%",
+	},
+	exit: {
+		top: ["100%", "0%"],
+	},
+};
+const reverseIndex = (index) => {
+	const totalSteps = 6;
+	return totalSteps - index - 1;
+};
 
-const  Stairs = () => {
-  return (
-    <>
-    {[...Array(6)].map((_, i) => (
-      <motion.div variants={stairsAnimations} initial="initial" animate="animate" exit="exit" className="" key={i} />
-    ))}
-      </>
-  )
-}
+const Stairs = () => {
+	return (
+		<>
+			{[...Array(6)].map((_, index) => {
+				return (
+					<motion.div
+						variants={stairsAnimations}
+						initial="initial"
+						animate="animate"
+						exit="exit"
+						className="w-full h-full bg-white relative"
+						key={index}
+						transition={{
+							duration: 0.4,
+							ease: "easeInOut",
+							delay: reverseIndex(index) * 0.1,
+						}}
+					/>
+				);
+			})}
+		</>
+	);
+};
 
-export default Stairs
+export default Stairs;
