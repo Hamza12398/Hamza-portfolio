@@ -8,4 +8,13 @@
     font-family: "JetBrains Mono", monospace;
     font-optical-sizing: auto;
   }
+  .h1 {
+    @apply text-[48px] xl:text-[80px]  font-semibold;
+  }
+  .h2 {
+    @apply text-[36px] xl:text-[48px]  font-semibold;
+  }
+  .h3 {
+    @apply text-[20px] xl:text-[24px]  font-semibold;
+  }
 }
