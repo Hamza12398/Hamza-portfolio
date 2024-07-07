@@ -12,13 +12,13 @@ const links = [
 		path: "/",
 	},
 	{
-		name: "services",
-		path: "/services",
-	},
-	{
-		name: "resume",
+		name: "Resume",
 		path: "/resume",
 	},
+	// {
+	// 	name: "Services",
+	// 	path: "/services",
+	// },
 	{
 		name: "work",
 		path: "/work",
@@ -38,29 +38,29 @@ const MobilNav = () => {
 			<SheetContent className="flex flex-col bg-slate-600">
 				{/* LOGO */}
 				<div className="mt-32 text-center text-2xl mb-40">
-          <Link href="/">
-            <h1 className="text-4xl font-semibold">
-              Hamza<spran className="text-accent">.</spran>
-            </h1>
-          </Link>
-        </div>
+					<Link href="/">
+						<h1 className="text-4xl font-semibold">
+							Hamza<spran className="text-accent">.</spran>
+						</h1>
+					</Link>
+				</div>
 
 				{/* NAV */}
 				<nav className="flex flex-col gap-6 justify-center items-center">
-          {links.map((link, index) => {
-            return (
-              <Link
-                href={link.path}
-                key={index}
-                className={`${
-                  link.path === path && "text-accent border-b-2 border-accent"
-                } capitalize font-medium hover:text-accent transition-all}`}
-              >
-                {link.name}
-              </Link>
-            );
-          })}
-        </nav>
+					{links.map((link, index) => {
+						return (
+							<Link
+								href={link.path}
+								key={index}
+								className={`${
+									link.path === path && "text-accent border-b-2 border-accent"
+								} capitalize font-medium hover:text-accent transition-all}`}
+							>
+								{link.name}
+							</Link>
+						);
+					})}
+				</nav>
 			</SheetContent>
 		</Sheet>
 	);

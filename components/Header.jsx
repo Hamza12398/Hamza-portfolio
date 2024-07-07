@@ -11,7 +11,7 @@ function Header() {
         {/* // ! Logo */}
         <Link href="/">
           <h1 className="text-4xl font-semibold">
-            Hamza<spran className="text-accent">.</spran>
+            Hamza<span className="text-accent">.</span>
           </h1>
         </Link>
 
