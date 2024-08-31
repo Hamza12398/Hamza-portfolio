@@ -37,8 +37,8 @@ const about = {
 			fieldValue: "Hamza Cherkaoui",
 		},
 		{
-			fieldName: "Phone",
-			fieldValue: "(+212) 6 93918467",
+			fieldName: "Phone Number",
+			fieldValue: "+212 6 93 91 84 67",
 		},
 		{
 			fieldName: "Experience",
@@ -55,7 +55,7 @@ const about = {
 
 		{
 			fieldName: "Freelancing",
-			fieldValue: "available",
+			fieldValue: "Available",
 		},
 		{
 			fieldName: "Languages",
@@ -143,7 +143,7 @@ const skills = {
 	],
 };
 
-function Reasume() {
+export default function Resume() {
 	return (
 		<motion.div
 			className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
@@ -155,7 +155,7 @@ function Reasume() {
 		>
 			<div className="container mx-auto">
 				<Tabs
-					defaultValue="experience"
+					defaultValue="experience"eee
 					className="flex flex-col xl:flex-row gap-[60px] "
 				>
 					<TabsList className="gap-6 flex-col w-full max-w-[380px] mx-auto xl:mx-0 ">
@@ -241,19 +241,17 @@ function Reasume() {
 									</p>
 								</div>
 
-								<ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gab-4 xl:gap[30px]">
+								<ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap[30px]">
 									{skills.skillsList.map((skill, index) => {
 										return (
 											<li key={index}>
-												<TooltipProvider delayDutation={100}>
+												<TooltipProvider>
 													<Tooltip>
-														<TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
-															<div className="text-6xl group-hover:text-accent transition-all duration-300">
-																{skill.icon}
-															</div>
+														<TooltipTrigger>
+															<div>{skill.icon}</div>
 														</TooltipTrigger>
 														<TooltipContent>
-															<div>{skill.name}</div>
+															// <div>{skill.name}</div>
 														</TooltipContent>
 													</Tooltip>
 												</TooltipProvider>
@@ -265,9 +263,29 @@ function Reasume() {
 						</TabsContent>
 
 						{/*//!  ABOUT */}
-						<TabsContent value="about" className="w-full">
-							<h3>{experience.title}</h3>
-							<p>{experience.description}</p>
+						<TabsContent
+							value="about"
+							className="w-full text-center xl:text-left"
+						>
+							<div className="flex flex-col gap-[30px]">
+								<h3 className="font-bold text-4xl">{about.title}</h3>
+								<p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+									{about.description}
+								</p>
+								<ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
+									{about.info.map((item, index) => {
+										return (
+											<li
+												key={index}
+												className="flex items-center justify-center xl:justify-start gap-4"
+											>
+												<span className="text-white/60">{item.fieldName}</span>
+												<span className="textl">{item.fieldValue}</span>
+											</li>
+										);
+									})}
+								</ul>
+							</div>
 						</TabsContent>
 					</div>
 				</Tabs>
@@ -275,5 +293,3 @@ function Reasume() {
 		</motion.div>
 	);
 }
-
-export default Reasume;
