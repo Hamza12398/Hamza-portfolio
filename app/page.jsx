@@ -27,7 +27,6 @@ const Home = () => {
 						{/* //! Buttons and Social Media  */}
 						<div className="flex gap-9 flex-col xl:flex-row items-center">
 							<Button
-								// onClick={onclick}
 								variant="outline"
 								size="lg"
 								className="flex items-center gap-2 uppercase"

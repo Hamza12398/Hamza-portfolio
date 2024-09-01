@@ -10,10 +10,10 @@ import {
 	FaTypo3,
 	FaNodeJs,
 	FaGit,
-	FaTailwindCss,
+	FaNext,
 } from "react-icons/fa";
 
-import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
+import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 
 import { TabsTrigger } from "@/components/ui/tabs";
 import { Tabs, TabsContent, TabsList } from "@/components/ui/tabs";
@@ -26,8 +26,6 @@ import {
 	TooltipProvider,
 	TooltipTrigger,
 } from "@/components/ui/tooltip";
-
-import { FaBeer } from "react-icons/fa";
 
 const about = {
 	title: "about me",
@@ -126,7 +124,7 @@ function Resume() {
 			},
 			{
 				icons: <FaJs />,
-				name: "javaScript",
+				name: "JavaScript",
 			},
 			{
 				icons: <FaReact />,
@@ -134,16 +132,20 @@ function Resume() {
 			},
 			{
 				icons: <FaNodeJs />,
-				names: "Node Js",
+				names: "Node",
 			},
 			{
 				icons: <FaGit />,
 				name: "Git",
 			},
-			// {
-			// 	icons: <FaTailwindCss />,
-			// 	name: "Tailwind",
-			// },
+			{
+				icons: <RiNextjsFill />,
+				name: "Next Js",
+			},
+			{
+				icons: <RiTailwindCssFill />,
+				name: "Tailwind CSS",
+			},
 		],
 	};
 
@@ -170,7 +172,7 @@ function Resume() {
 					</TabsList>
 
 					{/* //! Content */}
-					<div className="min-h-[70vh] w-full">
+					<div className="min-h-[70vh] w-full h-full">
 						{/* EXPERIENCE */}
 						<TabsContent value="experience" className="w-full">
 							<div className="flex flex-col gap-[20px] text-center xl:text-left">
@@ -236,7 +238,7 @@ function Resume() {
 						</TabsContent>
 
 						{/* //! SKILLS */}
-						<TabsContent value="skills" className="w-full">
+						<TabsContent value="skills" className="w-full h-full">
 							<div className="flex flex-col gap-[30px]">
 								<div className="flex flex-col gap-[30px] text-center xl:text-left">
 									<h3 className="text-4xl font-bold">{skills.title}</h3>
@@ -271,7 +273,7 @@ function Resume() {
 						{/*//!  ABOUT */}
 						<TabsContent
 							value="about"
-							className="w-full text-center xl:text-left"
+							className="w-vbfull text-center xl:text-left h-full"
 						>
 							<div className="flex flex-col gap-[30px]">
 								<h3 className="font-bold text-4xl">{about.title}</h3>
