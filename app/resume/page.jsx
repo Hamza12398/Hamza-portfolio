@@ -16,15 +16,18 @@ import {
 import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
 
 import { TabsTrigger } from "@/components/ui/tabs";
-import { Tabs, TabsContent, TabsList } from "@/Components/ui/tabs";
+import { Tabs, TabsContent, TabsList } from "@/components/ui/tabs";
+
+import { motion } from "framer-motion";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import {
 	Tooltip,
 	TooltipContent,
 	TooltipProvider,
 	TooltipTrigger,
-} from "@/Components/ui/tooltip";
-import { motion } from "framer-motion";
-import { ScrollArea } from "@/components/ui/scroll-area";
+} from "@/components/ui/tooltip";
+
+import { FaBeer } from "react-icons/fa";
 
 const about = {
 	title: "about me",
@@ -107,43 +110,43 @@ const education = {
 	],
 };
 
-const skills = {
-	title: "My Skills",
-	description:
-		"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam voluptatum blanditiis at voluptatibus rem officiis asperiores laborum, expedita odio maiores, aliquid provident fugit earum, inventore reiciendis temporibus dicta est non?",
-	skillsList: [
-		{
-			icon: <FaHtml5 />,
-			name: "HTML",
-		},
-		{
-			icon: <FaCss3 />,
-			name: "CSS",
-		},
-		{
-			icon: <FaJs />,
-			name: "javaScript",
-		},
-		{
-			icon: <FaReact />,
-			name: "React-Js",
-		},
-		{
-			icon: <FaNodeJs />,
-			name: "Node Js",
-		},
-		{
-			icon: <FaGit />,
-			name: "Git",
-		},
-		{
-			icon: <FaTailwindCss />,
-			name: "Tailwind",
-		},
-	],
-};
+function Resume() {
+	const skills = {
+		title: "My Skills",
+		description:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam voluptatum blanditiis at voluptatibus rem officiis asperiores laborum, expedita odio maiores, aliquid provident fugit earum, inventore reiciendis temporibus dicta est non?",
+		skillsList: [
+			{
+				icons: <FaHtml5 />,
+				name: "HTML",
+			},
+			{
+				icons: <FaCss3 />,
+				name: "CSS",
+			},
+			{
+				icons: <FaJs />,
+				name: "javaScript",
+			},
+			{
+				icons: <FaReact />,
+				name: "React-Js",
+			},
+			{
+				icons: <FaNodeJs />,
+				names: "Node Js",
+			},
+			{
+				icons: <FaGit />,
+				name: "Git",
+			},
+			// {
+			// 	icons: <FaTailwindCss />,
+			// 	name: "Tailwind",
+			// },
+		],
+	};
 
-export default function Resume() {
 	return (
 		<motion.div
 			className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
@@ -155,7 +158,8 @@ export default function Resume() {
 		>
 			<div className="container mx-auto">
 				<Tabs
-					defaultValue="experience"eee
+					defaultValue="experience"
+					eee
 					className="flex flex-col xl:flex-row gap-[60px] "
 				>
 					<TabsList className="gap-6 flex-col w-full max-w-[380px] mx-auto xl:mx-0 ">
@@ -232,7 +236,7 @@ export default function Resume() {
 						</TabsContent>
 
 						{/* //! SKILLS */}
-						<TabsContent value="skills" className="w-full h-full">
+						<TabsContent value="skills" className="w-full">
 							<div className="flex flex-col gap-[30px]">
 								<div className="flex flex-col gap-[30px] text-center xl:text-left">
 									<h3 className="text-4xl font-bold">{skills.title}</h3>
@@ -241,17 +245,19 @@ export default function Resume() {
 									</p>
 								</div>
 
-								<ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap[30px]">
+								<ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
 									{skills.skillsList.map((skill, index) => {
 										return (
 											<li key={index}>
-												<TooltipProvider>
+												<TooltipProvider delayDuration={100}>
 													<Tooltip>
-														<TooltipTrigger>
-															<div>{skill.icon}</div>
+														<TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center">
+															<div className="text-6xl group-hover:text-accent transition-all duration-300">
+																{skill.icons}
+															</div>
 														</TooltipTrigger>
 														<TooltipContent>
-															// <div>{skill.name}</div>
+															<div>{skill.name}</div>
 														</TooltipContent>
 													</Tooltip>
 												</TooltipProvider>
@@ -293,3 +299,5 @@ export default function Resume() {
 		</motion.div>
 	);
 }
+
+export default Resume;
