@@ -17,14 +17,15 @@ import Image from "next/image";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 
 import "swiper/css";
+import WorkSliderBtns from "@/components/ui/WorkSliderBtns";
 // import { IncrementalCache } from "next/dist/server/lib/incremental-cache";
 
 const projects = [
 	{
 		num: "01",
-		category: "Front-end",
+		category: "Front-end CRUD",
 		title: "Project-1",
-		description: "loeeam lorem lorem lorem lorem",
+		description: "ToDo List App",
 		stack: [
 			{ name: "React.js" },
 			{ name: "Javascript" },
@@ -38,8 +39,7 @@ const projects = [
 		num: "02",
 		category: "Front-end",
 		title: "Project-2",
-		description:
-			"A responsive and customizable portfolio website built using Next.js, React, and Tailwind CSS.",
+		description: "Weather App of KHOURIBGA City",
 		stack: [
 			{ name: "React,js" },
 			{ name: "javascript.js" },
@@ -53,13 +53,11 @@ const projects = [
 		num: "03",
 		category: "Front-end",
 		title: "Project-3",
-		description:
-			"A responsive and customizable portfolio website built using Next.js, React, and Tailwind CSS.",
+		description: "Small E-commerce Website",
 		stack: [
-			{ name: "Next,js" },
+			{ name: "Next.js" },
 			{ name: "Javascript.js" },
 			{ name: "React" },
-			,
 			{ name: "Typescript" },
 		],
 		image: "/product.jpg",
@@ -84,7 +82,7 @@ function Work() {
 			}}
 			className="min-h-[80vh] flex flex-col justify-center xl:px-0"
 		>
-			<div className="container mx-auto ">
+			<div className="container mx-auto">
 				<div className="flex flex-col xl:flex-row xl:gap-[30px]">
 					<div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between border-2 xl: border-none">
 						<div className="flex flex-col gap-[30px] h-[50%]">
@@ -111,14 +109,14 @@ function Work() {
 								})}
 							</ul>
 
-							{/* //? Projects Border */}
+							{/* //! Projects Border */}
 							<div className="border border-white/20"></div>
-							<div className="flex items-center gap-5">
-								{/* //? BUTTON LIVE CONTENT */}
+							<div className="flex items-center gap-4">
+								{/* //! BUTTON LIVE CONTENT */}
 								<Link href={project.live}>
 									<TooltipProvider delayDuration={100}>
 										<Tooltip>
-											<TooltipTrigger className="bg-white/5 rounded-full flex justify-end items-center group w-[70px] h-[70px]">
+											<TooltipTrigger className="bg-white/5 rounded-full flex justify-center items-center w-[70px] h-[70px]">
 												<BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
 											</TooltipTrigger>
 											<TooltipContent>Live content</TooltipContent>
@@ -130,7 +128,7 @@ function Work() {
 								<Link href={project.live}>
 									<TooltipProvider delayDuration={100}>
 										<Tooltip>
-											<TooltipTrigger className="bg-white/5 rounded-full flex justify-end items-center group w-[70px] h-[70px]">
+											<TooltipTrigger className="bg-white/5 rounded-full flex justify-center items-center group w-[70px] h-[70px]">
 												<BsGithub className="text-white text-3xl group-hover:text-accent justify-center items-center flex" />
 											</TooltipTrigger>
 											<TooltipContent>github Source Code</TooltipContent>
@@ -154,7 +152,7 @@ function Work() {
 									<SwiperSlide key={index} className="w-full">
 										<div className="relative h-[400px] justify-center flex items-center bg-pink-50/20">
 											{/* //* overlay */}
-											<div></div>
+											<div className="absolute top-0 buttom-0 h-full w-full bg-black/10 z-10"></div>
 											{/* //* Image */}
 											<div className="relative w-full h-full">
 												<Image
@@ -168,6 +166,8 @@ function Work() {
 									</SwiperSlide>
 								);
 							})}
+							{/* //! Slider Buttons  */}
+							<WorkSliderBtns containerStyle="flex gap-4 absolute right-0 justify-between buttom-[calc(50%_-_20px)] xl:bottom-0 z-20 w-full xl: w-max xl:justify-none" btnStyle="bg-white/5 rounded-full flex justify-center items-center group w-[70px] h-[70px]" iconsStyle="text-white text-3xl group-hover:text-accent justify-center items-center flex" />
 						</Swiper>
 					</div>
 				</div>
