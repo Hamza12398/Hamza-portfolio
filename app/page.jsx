@@ -8,9 +8,11 @@ import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
 
 const Home = () => {
+	const cvUrl = process.env.REACT_APP_CV_URL || "/CV Hamza.pdf";
+
 	return (
 		<section className="h-full">
-			<div className= "container mx-auto h-full">
+			<div className="container mx-auto h-full">
 				<div className="flex flex-col items-center justify-between xl:flex-row xl:pt-8 xl:pb-22">
 					{/* //! Text */}
 					<div className="text-center xl:text-left order-2 xl:order-none">
@@ -26,14 +28,20 @@ const Home = () => {
 
 						{/* //! Buttons and Social Media  */}
 						<div className="flex gap-9 flex-col xl:flex-row items-center">
-							<Button
-								variant="outline"
-								size="lg"
+							<a
+								href={cvUrl}
+								download="MyCV.pdf"
 								className="flex items-center gap-2 uppercase"
 							>
-								<span>Download CV</span>
-								<FiDownload className="text-xl" />
-							</Button>
+								<Button
+									variant="outline"
+									size="lg"
+									className="flex items-center gap-2 uppercase"
+								>
+									<span>Download CV</span>
+									<FiDownload className="text-xl" />
+								</Button>
+							</a>
 							<div className="mb-7 xl:mb-0">
 								<Social
 									containerStyles={"flex gap-6"}

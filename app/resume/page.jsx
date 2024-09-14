@@ -30,7 +30,7 @@ import {
 const about = {
 	title: "about me",
 	description:
-		"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam voluptatum blanditiis at voluptatibus rem officiis asperiores laborum, expedita odio maiores, aliquid provident fugit earum, inventore reiciendis temporibus dicta est non?",
+		"I am a dedicated front-end developer with a passion for creating engaging, user-friendly interfaces. My coding journey began at 1337 School of Coding, where I developed a solid foundation through immersive, project-based learning. Over the past two years, I’ve further enhanced my skills through peer learning at home, collaborating with fellow developers to refine my expertise in front-end technologies. This experience has equipped me with a deep understanding of modern web development and the ability to deliver responsive, intuitive web applications.",
 
 	info: [
 		{
@@ -68,7 +68,7 @@ const about = {
 const experience = {
 	icon: "",
 	description:
-		"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam voluptatum blanditiis at voluptatibus rem officiis asperiores laborum, expedita odio maiores, aliquid provident fugit earum, inventore reiciendis temporibus dicta est non?",
+		"I have one year of freelancing experience as a front-end developer, during which I worked with various clients to create responsive, visually appealing websites and web applications. Through these projects, I gained valuable experience in translating client requirements into functional, well-designed interfaces, while honing my skills in HTML, CSS, JavaScript, and React. Freelancing has also strengthened my ability to manage deadlines, communicate effectively, and adapt to diverse project needs, ensuring high-quality deliverables for each client.",
 	title: "My Experience",
 	items: [
 		{
@@ -92,7 +92,7 @@ const experience = {
 const education = {
 	icon: "",
 	description:
-		"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam voluptatum blanditiis at voluptatibus rem officiis asperiores laborum, expedita odio maiores, aliquid provident fugit earum, inventore reiciendis temporibus dicta est non?",
+		"I completed one year of online study at a private school, where I developed a solid foundation in web development and programming. Alongside this formal education, I have consistently pursued online courses to expand my knowledge in key areas such as front-end development, JavaScript frameworks, and UX/UI design. This combination of structured learning and self-driven education has enabled me to stay up-to-date with industry trends and continuously improve my skills as a developer.",
 	title: "Education",
 	items: [
 		{

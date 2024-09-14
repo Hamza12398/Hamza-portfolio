@@ -32,8 +32,8 @@ const projects = [
 			{ name: "Material Ui" },
 		],
 		image: "/todo.png",
-		live: "",
-		github: "",
+		live: "https://stupendous-eclair-7ee237.netlify.app/",
+		github: "https://github.com/Hamza12398/React-ToDoList-APP?tab=readme-ov-file",
 	},
 	{
 		num: "02",
@@ -46,8 +46,8 @@ const projects = [
 			{ name: "tailwind CSS" },
 		],
 		image: "/weather.jpg",
-		live: "",
-		github: "",
+		live: "https://sparkling-cendol-145187.netlify.app/",
+		github: "https://github.com/Hamza12398/Weather-App",
 	},
 	{
 		num: "03",
@@ -61,8 +61,8 @@ const projects = [
 			{ name: "Typescript" },
 		],
 		image: "/product.jpg",
-		live: "",
-		github: "",
+		live: "https://taupe-melba-11c604.netlify.app/",
+		github: "https://github.com/Hamza12398/products-card",
 	},
 ];
 function Work() {
@@ -72,7 +72,6 @@ function Work() {
 		const currentindex = swiper.activeIndex;
 		setproject(projects[currentindex]);
 	};
-
 	return (
 		<motion.section
 			initial={{ opacity: 0 }}
@@ -117,7 +116,9 @@ function Work() {
 									<TooltipProvider delayDuration={100}>
 										<Tooltip>
 											<TooltipTrigger className="bg-white/5 rounded-full flex justify-center items-center w-[70px] h-[70px]">
-												<BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
+												<BsArrowUpRight
+													className="text-white text-3xl group-hover:text-accent"
+												/>
 											</TooltipTrigger>
 											<TooltipContent>Live content</TooltipContent>
 										</Tooltip>
@@ -125,11 +126,13 @@ function Work() {
 								</Link>
 
 								{/* //? GITHUB SOURCE CODE*/}
-								<Link href={project.live}>
+								<Link href={project.github}>
 									<TooltipProvider delayDuration={100}>
 										<Tooltip>
 											<TooltipTrigger className="bg-white/5 rounded-full flex justify-center items-center group w-[70px] h-[70px]">
-												<BsGithub className="text-white text-3xl group-hover:text-accent justify-center items-center flex" />
+												<BsGithub
+													className="text-white text-3xl group-hover:text-accent justify-center items-center flex"
+												/>
 											</TooltipTrigger>
 											<TooltipContent>github Source Code</TooltipContent>
 										</Tooltip>
@@ -167,7 +170,11 @@ function Work() {
 								);
 							})}
 							{/* //! Slider Buttons  */}
-							<WorkSliderBtns containerStyle="flex gap-4 absolute right-0 justify-between buttom-[calc(50%_-_20px)] xl:bottom-0 z-20 w-full xl: w-max xl:justify-none" btnStyle="bg-white/5 rounded-full flex justify-center items-center group w-[70px] h-[70px]" iconsStyle="text-white text-3xl group-hover:text-accent justify-center items-center flex" />
+							<WorkSliderBtns
+								containerStyle="flex gap-4 absolute right-0 justify-between buttom-[calc(50%_-_20px)] xl:bottom-0 z-20 w-full xl: w-max xl:justify-none"
+								btnStyle="bg-white/5 rounded-full flex justify-center items-center group w-[70px] h-[70px]"
+								iconsStyle="text-white text-3xl group-hover:text-accent justify-center items-center flex"
+							/>
 						</Swiper>
 					</div>
 				</div>
